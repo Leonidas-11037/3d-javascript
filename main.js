@@ -6,6 +6,7 @@ import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/l
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const material = new THREE.MeshBasicMaterial( { color: 0xFF6347 } );
 
 
 // create a new renderer by instating the canvas element in our HTML // file
@@ -20,8 +21,6 @@ camera.position.setX(-3);
 const geometry = new THREE.BoxGeometry(10, 10, 10);
 
 //set the color of the basic material in the object parameters `{}`
-
-const material = new THREE.MeshBasicMaterial( { color: 0xFF6347 } );
 
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
@@ -49,7 +48,6 @@ ambientLight.position.set(25, -15, -400);
 scene.add(pointLight);
 scene.add(ambientLight);
 // Change material
-const material = new THREE.MeshStandardMaterial( { color: 0xFF6347 } );
 
 function animate() {
     requestAnimationFrame( animate );
