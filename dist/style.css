@@ -1,0 +1,126 @@
+p.test{
+    padding-left: 5em;
+    padding-right: 5em;
+    border: 1px solid black
+}
+body {
+    background: #7710b3;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+nav.top {
+    background:lime;
+    padding-left: 5em;
+    padding-right: 5em;
+}
+body.home {
+    height: 100%;
+    background-image:url(images/cyber.png);
+    height: 544px;
+    width: 1088px;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+body.home1 {
+    height: 100%;
+    background-image:url(images/cyber.png);
+    height: 544px;
+    width: 1544px;
+    background-repeat: repeat-x;
+    animation: slide 20s linear infinite;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+@keyframes slide{
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -544px, 0);
+  }
+}
+figure {
+    width: 20%;
+    background: /*#EFD6F6*/ white;
+    ;
+}
+
+img {
+    width: 80%;
+}
+
+img#PSB {
+    width: 10%;
+}
+
+section {
+    background: none;
+    width: 90%;
+    margin: auto;
+    padding: 1em
+}
+p.mono {
+    background:black;
+    color:white
+}
+/*  ebb: coloring links in p.mono on main page */
+
+p.mono a:link {
+  color: #69e848;
+  /*  bright green from page background */
+}
+
+p.mono a:visited {
+  color: #a000e5;
+}
+
+p.mono a:hover {
+  color: yellow;
+}
+
+p.mono a:active {
+  color: #db526b;
+
+}
+
+
+section.out{
+    background:purple
+}
+section.outer {
+    font-family: roman, 'times new roman', times, serif;
+    background: black
+    
+}
+section.outer1 {
+    background: black
+    
+}
+section.inner1 {
+    background:#b0b9ff
+    
+}
+section.form {
+    font-family: roman, 'times new roman', times, serif;
+    background:#b0b9ff
+    
+}
+.flex {
+    display:flex;
+}
+div.flex figure.wider{
+    flex:3;
+}
+
+/* Dr. B adding a flex container */
+div.flex  { display:flex; width:100%;}
+
+
+div.flex figure img { width: 100%;}
+
+div.flex figure {background:blue;}
+
+div.flex figure.wider {flex:3;}
+
+canvas{
+    position:fixed;
+    top: 0;
+    left: 0;
+}
