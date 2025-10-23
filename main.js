@@ -6,6 +6,7 @@ import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.128.0/examples/jsm/l
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const material = new THREE.MeshBasicMaterial( { color: 0xFF6347 } );
 
 
 // create a new renderer by instating the canvas element in our HTML // file
@@ -20,8 +21,6 @@ camera.position.setX(-3);
 const geometry = new THREE.BoxGeometry(10, 10, 10);
 
 //set the color of the basic material in the object parameters `{}`
-
-const material = new THREE.MeshBasicMaterial( { color: 0xFF6347 } );
 
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
@@ -48,22 +47,6 @@ ambientLight.position.set(25, -15, -400);
 
 scene.add(pointLight);
 scene.add(ambientLight);
-// Change material
-const material = new THREE.MeshStandardMaterial( { color: 0xFF6347 } );
-
-function animate() {
-    requestAnimationFrame( animate );
-    // slowly rotate the cube:
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-    // rotate the icosahedron a little faster in the opposite direction:
-    icoMesh.rotation.z += -0.03
-    icoMesh.rotation.y += -0.03
-
-    renderer.render( scene, camera );
-}
-
-animate();
 
 // Helpers
 
@@ -76,26 +59,11 @@ const gridHelper = new THREE.GridHelper(200,50);
 scene.add(gridHelper)
 
 // Orbit Controls
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 const controls = new OrbitControls(camera, renderer.domElement)
-
-function animate() {
-    requestAnimationFrame( animate );
-    // slowly rotate the cube:
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-    // rotate the icosahedron a little faster in the opposite direction:
-    icoMesh.rotation.z += -0.03
-    icoMesh.rotation.y += -0.03
-    // ALLOWS YOUR ORBIT CONTROLS TO UPDATE LIVE IN REAL-TIME:
-    controls.update()
-
-    renderer.render( scene, camera );
-}
 
 // Background
 
-const spaceTexture = new THREE.TextureLoader().load('images/outside.jpg')
+const outSide = new THREE.TextureLoader().load('images/outside.jpg')
 
 scene.background = outSide;
 
@@ -104,8 +72,6 @@ scene.background = outSide;
 const cyberTexture = new THREE.TextureLoader().load('images/cyber.png')
 
 // Object texture mapping
-
-const cyberTexture = new THREE.TextureLoader().load('images/cyber.jpg')
 
 const sphereGeometry = new THREE.SphereGeometry( 10, 22, 10 );
 
@@ -129,6 +95,8 @@ function animate() {
 
     renderer.render( scene, camera );
 }
+
+animate();
 
 const normalTexture = new THREE.TextureLoader().load('images/normals/textureNormal.png');
 
