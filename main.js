@@ -47,21 +47,6 @@ ambientLight.position.set(25, -15, -400);
 
 scene.add(pointLight);
 scene.add(ambientLight);
-// Change material
-
-function animate() {
-    requestAnimationFrame( animate );
-    // slowly rotate the cube:
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-    // rotate the icosahedron a little faster in the opposite direction:
-    icoMesh.rotation.z += -0.03
-    icoMesh.rotation.y += -0.03
-
-    renderer.render( scene, camera );
-}
-
-animate();
 
 // Helpers
 
@@ -76,20 +61,6 @@ scene.add(gridHelper)
 // Orbit Controls
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 const controls = new OrbitControls(camera, renderer.domElement)
-
-function animate() {
-    requestAnimationFrame( animate );
-    // slowly rotate the cube:
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-    // rotate the icosahedron a little faster in the opposite direction:
-    icoMesh.rotation.z += -0.03
-    icoMesh.rotation.y += -0.03
-    // ALLOWS YOUR ORBIT CONTROLS TO UPDATE LIVE IN REAL-TIME:
-    controls.update()
-
-    renderer.render( scene, camera );
-}
 
 // Background
 
@@ -127,6 +98,8 @@ function animate() {
 
     renderer.render( scene, camera );
 }
+
+animate();
 
 const normalTexture = new THREE.TextureLoader().load('images/normals/textureNormal.png');
 
